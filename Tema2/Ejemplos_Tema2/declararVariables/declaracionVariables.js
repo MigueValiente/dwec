@@ -4,6 +4,7 @@
 //EJEMPLOS CON VAR
 
 function comprobarDeclaracionSinTipo(caso){
+	//si no usas var, let o const se usara var por defecto
 	auxiliar = "AUXILIAR ES VISIBLE EN TODO EL ARCHIVO";
 	if(caso == 2){
 		auxiliar2 = "AUXILIAR2 TAMBIEN ES VISIBLE EN TODO EL ARCHIVO";		

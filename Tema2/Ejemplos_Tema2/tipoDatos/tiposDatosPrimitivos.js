@@ -4,7 +4,12 @@ console.log("EJEMPLOS DE TIPOS PRIMITIVOS");
 // DEBEMOS IR LLAMANDO A CADA FUNCIÓN PARA PROBAR CADA TIPO DE DATOS
 // DEBEMOS CREAR DOS EJEMPLOS MÁS PARA CADA CASO
 function ejemplosDeTiposPrimitivos(){
-
+	ejemploString();
+	ejemploNumber();
+	ejemploBoolean();
+	ejemploSymbol();
+	ejemploNull();
+	ejemploUndefined();
 }
 
 function ejemploString(){
@@ -60,3 +65,5 @@ function ejemploUndefined(){
 	console.log(variableNoDefinida);
 	//console.log(noExisteVariable) => ¿QUE PASARIA?
 }
+
+ejemplosDeTiposPrimitivos();
