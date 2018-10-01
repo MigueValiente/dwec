@@ -98,10 +98,10 @@ function declararArrayTipo(){
 
 }
 
-
+var x = "SOY gLOBAL";
 //Duodecima prueba
 function declararVariableGlobal(){
-
+    
 
     return window.x
             && x === "SOY gLOBAL"
@@ -111,6 +111,9 @@ function declararVariableGlobal(){
 
 //Prueba 13
 function declararPrototipo(){
+    let prototipo = function(cadena){
+        this.cadena = cadena;
+    }
 
     var objeto = new prototipo("ejemplo");
 
@@ -121,28 +124,27 @@ function declararPrototipo(){
 
 //Prueba 14
 function declaracionConRetraso(){
-
-    var resultado = y === 35;
-
     var y = 35;
+    var resultado = y === 35;
 
     return resultado;
 }
 
 //Prueba 15
 function declaracionLet(){
-    let x = 0;
+    let x = 2;
+    let y = "";
     if(x > 1){
-        let y = "bien";
+         y = "bien";
     }
     return y === "bien";
 }
 
 //Prueba 16
 function declaracionConst(){
-    const valor = 10;
-    valor += 20;
-    valor = 30;
+    const valor = 30;
+    // valor += 20;
+    // valor = 30;
     return valor === 30;
 }
 
@@ -157,5 +159,10 @@ console.log("Octava prueba: "+declararFuncion());
 console.log("Novena prueba: "+declararObjeto());
 console.log("Decima prueba: "+declararArray());
 console.log("Undecima prueba: "+declararArrayTipo());
+console.log("Duodecima prueba: "+declararVariableGlobal());
+console.log("Treceava prueba: "+declararPrototipo());
+console.log("Catorceava prueba: "+declaracionConRetraso());
+console.log("Decimoquinta prueba: "+declaracionLet());
+console.log("decimosexta prueba: "+declaracionConst());
 
 
