@@ -98,10 +98,10 @@ function declararArrayTipo(){
 
 }
 
-var x = "SOY gLOBAL";
+
 //Duodecima prueba
 function declararVariableGlobal(){
-    
+    window.x = "SOY gLOBAL";
 
     return window.x
             && x === "SOY gLOBAL"
