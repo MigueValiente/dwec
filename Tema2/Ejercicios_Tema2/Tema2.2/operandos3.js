@@ -7,15 +7,15 @@
 
 function quienEsMayor(a,b){
     let resultado;
-    if(typeof a === "number" && typeof b === "number"){
+    if(comprobarNumero(a) && comprobarNumero(b)){
         resultado = 0;
         if(a < b){
-            resultado = -1   
+            resultado = -1;   
         }else if(a > b){
-            resultado = 1
+            resultado = 1;
         }
     }else{
-        resultado = "ERROR";
+        resultado = `ERROR`;
     }
 
     return resultado;
@@ -23,12 +23,14 @@ function quienEsMayor(a,b){
 }
 
 //Dado un array de elementos, devuelve la suma de todos aquellos que los elementos sean pares
-function sumarElementosPares(elemetos){
+function sumarElementosPares(elementos){
     let suma = 0;
-    if(elemetos instanceof Array){
-        for (let i = 0; i < elemetos.length; i++) {
-            if(elemetos[i]%2 === 0)
-                suma+= elemetos[i];
+    if(elementos instanceof Array){
+        for (let elemento of elementos) {
+            if(comprobarNumero(elemento)){
+                if(elemento%2 === 0)
+                    suma+= elemento;
+            }
         }
     }else{
         return `ERROR`;
@@ -38,11 +40,14 @@ function sumarElementosPares(elemetos){
 
 //Dado un array de elementos devuelve el valor mas grande de todos ellos.
 function escogerValorMasGrande(elementos){
-    let numeroMax = Number.MIN_VALUE;
     if(elementos instanceof Array){
-        for (let i = 0; i < elementos.length; i++) {
-            if(elementos[i] > numeroMax)
-                numeroMax = elementos[i];
+        if(elementos.length > 0){
+            var numeroMax = Number.MIN_VALUE;    
+            for (let elemento of elementos) {
+                if(quienEsMayor(elemento,numeroMax) === 1){
+                    numeroMax = elemento;
+                }
+            }
         }
     }else{
         return `ERROR`;
@@ -56,8 +61,8 @@ function escogerValorMasGrande(elementos){
 function invertirUnaPalabra(cadena){
     let cadenaInvertida = "";
     if (typeof cadena === "string") {
-        for (let i = cadena.length-1; i >= 0; i--) {
-            cadenaInvertida += cadena[i];
+        for (let x of cadena) {
+            cadenaInvertida = x+cadenaInvertida;
         }
     }else{
         return `ERROR`;
@@ -69,9 +74,12 @@ function invertirUnaPalabra(cadena){
 function contarElementosImpares(elementos){
     let arrayImpares = [];
     if(elementos instanceof Array){
-        for (let i = 0; i < elementos.length; i++) {
-            if(elementos[i]%2 !== 0)
-                arrayImpares.push(elementos[i]);
+        for (let elemento of elementos) {
+            if(comprobarNumero(elemento)){
+                if(elemento%2 !== 0){
+                    arrayImpares.push(elemento);
+                }
+            }
         }
     }else{
         return `ERROR`;
@@ -79,12 +87,47 @@ function contarElementosImpares(elementos){
     return `La cantidad de números impares es ${arrayImpares.length}`;
 }
 
+function comprobarNumero(x){
+    if(typeof x === "number" && x !== Infinity && x >= Number.MIN_VALUE && x <= Number.MAX_VALUE){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 let arrayPrueba = [1/0,undefined,null,2.5,"Prueba",4,5,6];
 
-console.log(`Resultado quienEsMayor: ${quienEsMayor("d",2)}`);
+let x = (typeof 1/0);
+
+
+function validarDNI(dni){
+    let resultado = false;
+    let numero = parseInt(dni.substr(0,8));
+    let letra = dni.substr(8,1);
+    if(typeof dni === "string"){
+        if(dni.length === 9){
+            if(!isNaN(numero) && typeof letra ==="string"){
+                if(letra === calcularLetra(numero)){
+                    resultado = true;
+                }
+            }
+        }
+    }
+    return resultado;
+}
+
+function calcularLetra(numero){
+    var letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+    let resto = numero%23;
+    let letra = letras[resto];
+    return letra;
+}
+
+console.log(`Resultado quienEsMayor: ${quienEsMayor(5,8)}`);
 console.log(`Resultado sumarElementosPares: ${sumarElementosPares(arrayPrueba)}`);
 console.log(`Resultado escogerValorMasGrande: ${escogerValorMasGrande(arrayPrueba)}`);
 console.log(`Resultado invertirUnaPalabra: ${invertirUnaPalabra("Hola")}`);
 console.log(`Resultado contarElementosImpares: ${contarElementosImpares(arrayPrueba)}`);
+console.log(validarDNI("29518833N"));
 
 
