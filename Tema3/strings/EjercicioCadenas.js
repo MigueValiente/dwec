@@ -14,7 +14,15 @@ function mayusMinus(frase){
 }
 
 function agregarCadena(frase,posicion,palabra){
-    return frase[posicion+1].concat(palabra);
+    return frase.slice(0,posicion).concat(palabra,frase.slice(posicion,frase.length));
+}
+
+function sacarPalabras(frase,numeroPalabras){
+    let nuevaFrase = "";
+    for (let palabra of frase.split(" ",numeroPalabras)) {
+        nuevaFrase += `${palabra} `;
+    }
+    return nuevaFrase;
 }
 
 
@@ -22,3 +30,4 @@ function agregarCadena(frase,posicion,palabra){
 console.log(frase);
 console.log(mayusMinus(frase));
 console.log(agregarCadena(frase,5,"pepe"));
+console.log(sacarPalabras(frase,3));
