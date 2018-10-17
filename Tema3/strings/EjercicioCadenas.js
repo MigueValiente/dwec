@@ -20,7 +20,9 @@ function agregarCadena(frase,posicion,palabra){
 function sacarPalabras(frase,numeroPalabras){
     let nuevaFrase = "";
     for (let palabra of frase.split(" ",numeroPalabras)) {
-        nuevaFrase += `${palabra} `;
+        if(palabra != " "){
+            nuevaFrase += `${palabra} `;
+        }
     }
     return nuevaFrase;
 }
