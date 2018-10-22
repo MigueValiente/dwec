@@ -31,7 +31,7 @@ function comprobarEmail(email){
 function contarPalabras(frase,palabra){
     let contador = 0;
     let expr = new RegExp(`(\\s+${palabra}\\s+\\W)`,'g');
-    console.log(expr);
+    //console.log(expr);
     let res = frase.match(expr);
     if(res !== null){
         contador = res.length;
@@ -42,9 +42,25 @@ function contarPalabras(frase,palabra){
     return `La palabra ${palabra} se ha repetido ${contador} veces.`;
 }
 
+function esHexadecimal(palabra){
+    //let expr = new RegExp(`^#(?:[0-9a-fA-F]{3}){1,2}$`);
+    let expr = new RegExp("^#(([0-9a-fA-F]{6})|([0-9a-fA-F]{3}))$");
+    let mensaje = "";
+
+    if(expr.test(palabra)){
+        mensaje = "Si es un código hexadecimal";
+    }else{
+        mensaje = "No es un código hexadecimal";
+    }
+
+    return mensaje;
+}
+
 // console.log(comprobarNombre("Manolo Perez"));
 // console.log(comprobarTelefono("642543545"));
 // console.log(comprobarTelefono("744383545"));
 // console.log(comprobarTelefono("542596790"));
 // console.log(comprobarEmail("miguevaliente96_@gamial.es"));
-console.log(contarPalabras("De estoy cansado de esta clase de nade cliente, denada","de"));
+//console.log(contarPalabras("De estoy cansado de esta clase de nade cliente, denada","de"));
+console.log(esHexadecimal("#AED"));
+console.log(esHexadecimal("#235125"));
