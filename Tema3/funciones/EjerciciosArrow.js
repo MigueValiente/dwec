@@ -41,8 +41,8 @@ function invertir(array1,inicio,fin){
 let a3 = [5,6,10,15,20,25,30,40];
 let a4 = [1,2,3,4,5,6,7,8,9,10];
 
-console.log(invertir(a3,2,5));
-console.log(invertir(a4,3,7));
+// console.log(invertir(a3,2,5));
+// console.log(invertir(a4,3,7));
 
 // let numeros2 = [1,2,3,4,5,6,7,8,9,11,12,20,21,22];
 // console.log(numeros2.sort());
