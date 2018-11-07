@@ -21,7 +21,7 @@ function crearForm(numeroDiv){
            input.id = `${i}.${j}`;
            input.value = `${i}.${j}`;
            input.autocomplete = "off";
-           input.setAttribute("onmouseover","cambiarRosa("+input.id+")");
+           input.setAttribute("onmouseover","cambiarRosa('"+input.id+"')");
            if(j%2 === 0){
                input.className = "par";
            }else{
@@ -55,7 +55,7 @@ function cambiarColores(){
 function cambiarRosa(id){
     let input = document.getElementById(id);
     input.style.backgroundColor = "pink";
-    
+
 }
     
 
