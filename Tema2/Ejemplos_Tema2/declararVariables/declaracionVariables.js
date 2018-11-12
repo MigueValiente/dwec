@@ -5,14 +5,19 @@
 
 function comprobarDeclaracionSinTipo(caso){
 	//si no usas var, let o const se usara var por defecto
+
+	let contadorLlamadas = 7;
+
 	auxiliar = "AUXILIAR ES VISIBLE EN TODO EL ARCHIVO";
 	if(caso == 2){
 		auxiliar2 = "AUXILIAR2 TAMBIEN ES VISIBLE EN TODO EL ARCHIVO";		
 	}
 	if(caso == 3){
 		auxiliar3 = "AUXLIAR 3 TAMBIEN ES VISIBLE EN TODO EL ARCHIVO";
+		let contadorLlamadas = 10;
 	}
 	contadorLlamadas++; 
+	console.log("CONTADOR DE LLAMADAS:"+contadorLlamadas)
 }
 
 function ejemploDeclaracionGlobal(){

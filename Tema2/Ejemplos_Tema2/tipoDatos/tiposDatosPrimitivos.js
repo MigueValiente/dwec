@@ -6,6 +6,7 @@ console.log("EJEMPLOS DE TIPOS PRIMITIVOS");
 function ejemplosDeTiposPrimitivos(){
 	ejemploString();
 	ejemploNumber();
+
 	ejemploBoolean();
 	ejemploSymbol();
 	ejemploNull();
