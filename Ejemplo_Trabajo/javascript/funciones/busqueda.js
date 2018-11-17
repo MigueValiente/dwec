@@ -4,7 +4,7 @@ function filtrarPorNombreyDirector(){
     let nombrePelicula = inputNombre.value;
     let director = inputDirector.value;
     let peliculasfiltradas = realizarBusquedaNombreyDirector(nombrePelicula,director);
-    mostrarPeliculasHTML(peliculasFiltradas);
+    mostrarPeliculasHTML(peliculasfiltradas);
 }
 
 function realizarBusquedaNombreyDirector(nombrePelicula,director){
@@ -21,7 +21,7 @@ function resetearFiltros(){
 
 function realizarPruebasBusquedaNombreyDirector(){
     console.log("Pruebas de Busqueda por Nombre y Director");
-    let prueba1 = realizarBusquedaNombreyDirector("Star", "Abraham"); //Dolo devuelve una pelicula
+    let prueba1 = realizarBusquedaNombreyDirector("Star", "Abraham"); //Solo devuelve una pelicula
     console.log("Prueba1: realizarBusquedaNombreyDirector('Star', 'Abraham')");
     if(prueba1.length === 1){
         console.log("Prueba1 Correcta");
