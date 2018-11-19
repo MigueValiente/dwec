@@ -76,4 +76,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 });
 
+// function mostrarHola(event){
+//     event.preventDefault();
+//     alert("Hola");
+// }
+
+// let inputLink = document.getElementById("link");
+// inputLink.addEventListener("click", mostrarHola);
+
+
 console.log("Ya se han asociado todos los eventos");

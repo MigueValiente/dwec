@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>EJEMPLO FORMULARIO</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="ejercicioEventos.js" cache="false" defer></script>
+</head>
+<body>
+    <div id="ejemploEventos">
+        <h2>EJERCICIO DE FORMULARIO CON EVENTOS</h2>
+        <form id="formulario" action="correcto.html" method="POST">
+        <div class="elementoFormulario">
+            <div class="etiqueta">
+                <label for="nombreP" >NOMBRE PROYECTO</label>
+            </div>
+            <!-- Primera forma de asociar eventos. Desde el HTML-->
+            <input id="nombreP" type="text"/>
+            <small>Solo letras y sin espacios</small>
+        </div>
+        <div class="elementoFormulario">
+            <div class="etiqueta">
+                <label for="duracion" >DURANCION</label>
+            </div>
+            <input id="duracion" type="text"/>
+            <small>Solo numeros entre 6 y 24 incluidos</small>
+        </div>
+        <div class="elementoFormulario">
+            <div class="etiqueta">
+                <label for="jefe">JEFE PROYECTO</label>
+            </div>
+            <input id="jefe" type="text"/>
+            <small>Solo letras, con solo un espacio y primera letra siempre en mayusculas.El nombre del proyecto y del jefe no pueden coincidir</small>
+        </div>
+        <div class="elementoFormulario">
+            <div class="etiqueta">
+                <label for="tipo">TIPO PROYECTO</label>
+            </div>
+            <select id="tipo">
+                <option value="">Seleccionar</option>
+                <option value="aplicacion">Aplicacion Web</option>
+                <option value="redes">Redes</option>
+                <option value="movil">Movil</option>
+            </select>
+        </div>
+        <div class="elementoFormulario">
+                <input id="terminos" type="checkbox"/>
+                <div class="etiqueta">
+                    <label for="terminos">Acepto Terminos</label>
+                </div>
+            </div>
+        <div class="botones">
+            <button >ENVIAR DATOS</button>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>
