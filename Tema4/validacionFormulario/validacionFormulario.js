@@ -13,19 +13,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     inputDuracion.addEventListener("keyup", function(event){
         comprobarCampo(event,comprobarDuracion);
-    })
+    });
 
     inputJefe.addEventListener("keyup", function(event){
         comprobarCampo(event,comprobarJefe);
-    })
+    });
 
     inputCategoria.addEventListener("change", function(event){
         comprobarCategoria(event.target);
-    })
+    });
 
     inputTerminos.addEventListener("change", function(event){
         comprobarTerminos(event.target);
-    })
+    });
 
     
     formulario.addEventListener("submit",function(event){
@@ -47,7 +47,7 @@ let timeout = null;
 
 function comprobarCampo(event,funcionComprobar){
     clearTimeout(timeout);
-    timeout = setTimeout(function () {
+    timeout = setTimeout(function(){
        funcionComprobar(event.target);
     }, 500);
 };

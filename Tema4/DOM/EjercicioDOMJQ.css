@@ -1,0 +1,9 @@
+.par{
+    background-color: red;
+    text-align: left;
+}
+
+.impar{
+    background-color: green;
+    text-align: left;
+}
