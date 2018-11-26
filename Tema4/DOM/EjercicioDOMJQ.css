@@ -1,9 +1,12 @@
 .par{
-    background-color: red;
+    background-color: orange;
     text-align: left;
+    width: 100px;
 }
 
 .impar{
-    background-color: green;
+    background-color: blue;
     text-align: left;
+    color: white;
+    width: 100px;
 }
