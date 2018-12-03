@@ -106,5 +106,4 @@ class Director{
 	incluirPelicula(pelicula){
 		this._peliculas.push(pelicula);
 	}
-
 }
